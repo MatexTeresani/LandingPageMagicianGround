@@ -7,9 +7,11 @@
   <link rel="stylesheet" href="style/style.css">
   <!-- FontAwesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <!-- Icon -->
+  <link rel="icon" type="image/png" href="/img/LogoMagicians.png">
 </head>
 <body>
-
   <header>
     <div class="logo">
       <!-- Aquí puedes reemplazar la imagen por tu logo -->
@@ -25,23 +27,23 @@
   <div class="sidebar" id="sidebar">
     <button class="close-btn" onclick="toggleMenu()">×</button>
     <ul>
-      <li><i class="fas fa-home"></i> <a href="#">Home</a></li>
-      <li><i class="fas fa-info-circle"></i> <a href="#">Sobre Nosotros</a></li>
-      <li><i class="fas fa-bullseye"></i> <a href="#">Objetivos</a></li>
-      <li><i class="fas fa-users"></i> <a href="#">Equipo</a></li>
-      <li><i class="fas fa-box"></i> <a href="#">Productos y/o Servicios</a></li>
-      <li><i class="fas fa-phone"></i> <a href="#">Contacto</a></li>
+      <li><i class="fas fa-home"></i> <a href="#hero">Home</a></li>
+      <li><i class="fas fa-info-circle"></i> <a href="#about">Sobre Nosotros</a></li>
+      <li><i class="fas fa-bullseye"></i> <a href="#objetivo">Objetivos</a></li>
+      <li><i class="fas fa-users"></i> <a href="#team">Equipo</a></li>
+      <li><i class="fas fa-box"></i> <a href="#services">Productos y/o Servicios</a></li>
+      <li><i class="fas fa-phone"></i> <a href="#contact">Contacto</a></li>
     </ul>
   </div>
 
   <main>
-    <section class="hero">
+    <section id="hero" class="hero">
             <div class="hero-texto">
                 <h1>Magician Ground</h1>
                 <p>El futuro de la agronomía</p>
             </div>
         </section>
-         <section class="quienes-somos">
+         <section id="about" class="quienes-somos">
             <div class="contenido-izquierda">
                 <h3>¿Quiénes somos?</h3>
                 <p>
@@ -51,8 +53,9 @@
                
             </div>
             <div class="contenido-derecha">
-                <a href="#">Conocer nuestro producto más reciente        <i class="fa-solid fa-arrow-right"></i></a>
-                <a href="#">Ver más sobre quienes somos            <i class="fa-solid fa-arrow-right"></i></a>
+                <a href="#services">Conocer nuestro producto más reciente        <i class="fa-solid fa-arrow-right"></i></a>
+                <a href="https://github.com/MagicianGround" target="_blank" rel="noopener noreferrer">Ver más sobre quienes somos            <i class="fa-solid fa-arrow-right"></i></a>
+
             </div>
         </section>
         <section id="objetivo" class="objetivo">
@@ -61,16 +64,16 @@
                 <p>
                 Nuestro objetivo es transformar la agricultura a través de soluciones inteligentes que optimicen los procesos productivos, aumenten la eficiencia en el uso de los recursos y promuevan prácticas sostenibles.
                 </p>
-                <a href="#">Ver más sobre nuestro objetivo <i class="fa-solid fa-arrow-right"></i></a>
+                <a href="https://github.com/MagicianGround" target="_blank" rel="noopener noreferrer">Ver más sobre nuestro objetivo <i class="fa-solid fa-arrow-right"></i></a>
             </div>
         </section>
-        <section id="trabajo" class="trabajo">
+        <section id="team" class="trabajo">
             <div class="trabajo-texto">
                 <h2>¿Como Trabajamos?</h2>
                 <p>
                 Trabajamos en la integración de tecnologías como sensores IoT, inteligencia artificial, sistemas de monitoreo en tiempo real y análisis de datos para ofrecer herramientas que impulsen una agricultura más moderna, precisa y rentable.
                 </p>
-                <a href="#">Mas Sobre nuestra manera de Trabajo <i class="fa-solid fa-arrow-right"></i></a>
+                <a href="https://github.com/MagicianGround" target="_blank" rel="noopener noreferrer">Mas Sobre nuestra manera de Trabajo <i class="fa-solid fa-arrow-right"></i></a>
                 <div class="contenido-derecha-trabajo">
                     
                 </div>
@@ -79,7 +82,7 @@
                 <img src="/img/equipo-de-empresarios-durante-una-reunion.jpg" alt="Equipo trabajando">
             </div>
         </section>
-        <section class="estaca">
+        <section id="services" class="estaca">
 
             <div class="estaca-izquierda">
               
@@ -100,7 +103,7 @@
   <div class="footer-contenedor">
 
     <!-- Título -->
-    <h2>Contacto</h2>
+    <h2 id="contact">Contacto</h2>
 
     <!-- Formulario -->
     <footer class="footer">
