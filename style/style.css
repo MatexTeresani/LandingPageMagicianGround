@@ -698,7 +698,7 @@ header {
    .trabajo {
     flex-direction: column;
     height: auto;
-    background-image: url("img\equipo-de-empresarios-durante-una-reunion.webp");
+    background-image: url("/img/equipo-de-empresarios-durante-una-reunion.jpg");
     background-repeat: no-repeat;
     background-size: cover;
   }
