@@ -1,152 +1,182 @@
-import React, { useState } from "react";
+import { useState } from "react";
+import "./App.css"
 import logoImage from "./assets/img/LogoMagicians.png";
 import teamImage from "./assets/img/equipo-de-empresarios-durante-una-reunion.jpg";
 import productImage from "./assets/img/enhanced_image_1-removebg-preview.png";
 
-const MagicianGround: React.FC = () => {
+const MagicianGround = () => {
   const [menuVisible, setMenuVisible] = useState(false);
 
   const toggleMenu = () => setMenuVisible(!menuVisible);
 
   return (
-    <div style={styles.container}>
-      {/* Header */}
-      <header style={styles.header}>
-        <img src={logoImage} alt="Logo Magicians" style={styles.logo} />
-        <button onClick={toggleMenu} style={styles.menuButton}>
-          <div style={styles.bar}></div>
-          <div style={styles.bar}></div>
-          <div style={styles.bar}></div>
+    <>
+      <header>
+        <div className="logo">
+          <img src={logoImage} alt="logo" />
+        </div>
+        <button className="menu-btn" onClick={toggleMenu}>
+          <div></div>
+          <div></div>
+          <div></div>
         </button>
       </header>
 
-      {/* Sidebar */}
-      {menuVisible && (
-        <div style={styles.sidebar}>
-          <button onClick={toggleMenu} style={styles.closeButton}>
-            ×
-          </button>
-          <ul style={styles.menuList}>
-            <li>Home</li>
-            <li>Sobre Nosotros</li>
-            <li>Objetivos</li>
-            <li>Equipo</li>
-            <li>Productos</li>
-            <li>Contacto</li>
-          </ul>
-        </div>
-      )}
+      <div className={`sidebar ${menuVisible ? "active" : ""}`} id="sidebar">
+        <button className="close-btn" onClick={toggleMenu}>
+          ×
+        </button>
+        <ul>
+          <li>
+            <i className="fas fa-home"></i> <a href="#hero">Home</a>
+          </li>
+          <li>
+            <i className="fas fa-info-circle"></i>{" "}
+            <a href="#about">Sobre Nosotros</a>
+          </li>
+          <li>
+            <i className="fas fa-bullseye"></i> <a href="#objetivo">Objetivos</a>
+          </li>
+          <li>
+            <i className="fas fa-users"></i> <a href="#team">Equipo</a>
+          </li>
+          <li>
+            <i className="fas fa-box"></i>{" "}
+            <a href="#services">Productos y/o Servicios</a>
+          </li>
+          <li>
+            <i className="fas fa-phone"></i> <a href="#contact">Contacto</a>
+          </li>
+        </ul>
+      </div>
 
-      {/* Contenido principal */}
-      <main style={styles.main}>
-        <section style={styles.section}>
-          <h2 style={styles.title}>Sobre Nosotros</h2>
-          <img src={teamImage} alt="Equipo" style={styles.sectionImage} />
-          <p style={styles.text}>
-            En MagicianGround trabajamos para mejorar el rendimiento de la tierra a través de
-            análisis precisos y tecnología de vanguardia.
-          </p>
+      <main>
+        <section id="hero" className="hero">
+          <div className="hero-texto">
+            <h1>Magician Ground</h1>
+            <p>El futuro de la agronomía</p>
+          </div>
         </section>
 
-        <section style={styles.section}>
-          <h2 style={styles.title}>Productos</h2>
-          <img src={productImage} alt="Producto" style={styles.sectionImage} />
-          <p style={styles.text}>
-            Nuestro sistema analiza macronutrientes, humedad, pH, y más, brindando datos en tiempo real.
-          </p>
+        <section id="about" className="quienes-somos">
+          <div className="contenido-izquierda">
+            <h3>¿Quiénes somos?</h3>
+            <p>
+              Somos una empresa dedicada al desarrollo de innovaciones
+              tecnológicas enfocadas en el sector agrícola.
+            </p>
+          </div>
+          <div className="contenido-derecha">
+            <a href="#services">
+              Conocer nuestro producto más reciente <i className="fa-solid fa-arrow-right"></i>
+            </a>
+            <a
+              href="https://github.com/MagicianGround"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Ver más sobre quienes somos <i className="fa-solid fa-arrow-right"></i>
+            </a>
+          </div>
+        </section>
+
+        <section id="objetivo" className="objetivo">
+          <div className="objetivo-texto">
+            <h2>Nuestro Objetivo</h2>
+            <p>
+              Nuestro objetivo es transformar la agricultura a través de
+              soluciones inteligentes que optimicen los procesos productivos,
+              aumenten la eficiencia en el uso de los recursos y promuevan
+              prácticas sostenibles.
+            </p>
+            <a
+              href="https://github.com/MagicianGround"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Ver más sobre nuestro objetivo <i className="fa-solid fa-arrow-right"></i>
+            </a>
+          </div>
+        </section>
+
+        <section id="team" className="trabajo">
+          <div className="trabajo-texto">
+            <h2>¿Cómo Trabajamos?</h2>
+            <p>
+              Trabajamos en la integración de tecnologías como sensores IoT,
+              inteligencia artificial, sistemas de monitoreo en tiempo real y
+              análisis de datos para ofrecer herramientas que impulsen una
+              agricultura más moderna, precisa y rentable.
+            </p>
+            <a
+              href="https://github.com/MagicianGround"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Más sobre nuestra manera de trabajo <i className="fa-solid fa-arrow-right"></i>
+            </a>
+          </div>
+          <div className="trabajo-imagen">
+            <img src={teamImage} alt="Equipo trabajando" />
+          </div>
+        </section>
+
+        <section id="services" className="estaca">
+          <div className="estaca-izquierda">
+            <a href="#">
+              <img src={productImage} alt="Producto" />
+            </a>
+          </div>
+          <h3>Productos</h3>
+          <div className="estaca-derecha"></div>
         </section>
       </main>
-    </div>
+
+      <footer className="footer">
+        <div className="footer-contenedor">
+          <div className="footer-form">
+            <h2>Contacto</h2>
+            <form>
+              <input type="text" placeholder="Nombre y apellido" required />
+              <input type="email" placeholder="Gmail" required />
+              <textarea placeholder="Mensaje" required></textarea>
+              <button type="submit">Enviar</button>
+            </form>
+          </div>
+
+          <div className="footer-bottom">
+            <div className="footer-info">
+              <div className="footer-redes">
+                <a
+                  href="https://www.instagram.com/proa_lafalda/?hl=es"
+                  target="_blank"
+                >
+                  <i className="fab fa-instagram"></i>
+                </a>
+                <a
+                  href="https://www.facebook.com/proalafalda/?locale=es_LA"
+                  target="_blank"
+                >
+                  <i className="fab fa-facebook"></i>
+                </a>
+                <a
+                  href="https://proalafalda.blogspot.com/"
+                  target="_blank"
+                >
+                  <i className="fas fa-envelope"></i>
+                </a>
+                <a href="#">
+                  <i className="fab fa-linkedin"></i>
+                </a>
+              </div>
+            </div>
+
+            <p className="footer-copy">BY MAGICIAN GROUND</p>
+          </div>
+        </div>
+      </footer>
+    </>
   );
 };
 
 export default MagicianGround;
-
-const styles: { [key: string]: React.CSSProperties } = {
-  container: {
-    fontFamily: "Arial, sans-serif",
-    position: "relative",
-    backgroundColor: "#f4f4f4",
-    color: "#333",
-    minHeight: "100vh",
-    overflowX: "hidden",
-  },
-  header: {
-    display: "flex",
-    justifyContent: "space-between",
-    alignItems: "center",
-    padding: "16px",
-    backgroundColor: "#003366",
-    color: "white",
-  },
-  logo: {
-    width: "150px",
-  },
-  menuButton: {
-    background: "none",
-    border: "none",
-    cursor: "pointer",
-    display: "flex",
-    flexDirection: "column",
-    justifyContent: "center",
-  },
-  bar: {
-    width: "25px",
-    height: "3px",
-    backgroundColor: "white",
-    margin: "4px 0",
-  },
-  sidebar: {
-    position: "fixed",
-    top: 0,
-    left: 0,
-    width: "220px",
-    height: "100%",
-    backgroundColor: "#002244",
-    color: "white",
-    padding: "20px",
-    zIndex: 100,
-  },
-  closeButton: {
-    background: "none",
-    border: "none",
-    color: "white",
-    fontSize: "24px",
-    position: "absolute",
-    top: "10px",
-    right: "15px",
-    cursor: "pointer",
-  },
-  menuList: {
-    listStyle: "none",
-    padding: 0,
-    marginTop: "50px",
-    display: "flex",
-    flexDirection: "column",
-    gap: "12px",
-    fontSize: "18px",
-  },
-  main: {
-    padding: "20px",
-  },
-  section: {
-    textAlign: "center",
-    marginBottom: "40px",
-  },
-  title: {
-    fontSize: "24px",
-    marginBottom: "16px",
-  },
-  sectionImage: {
-    width: "60%",
-    maxWidth: "500px",
-    borderRadius: "10px",
-    margin: "10px auto",
-    display: "block",
-  },
-  text: {
-    fontSize: "16px",
-    lineHeight: "1.5",
-    marginTop: "12px",
-  },
-};
