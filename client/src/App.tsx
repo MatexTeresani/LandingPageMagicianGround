@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import logoImage from "assets/img/LogoMagicians.png";
-import teamImage from "assets/img/equipo-de-empresarios-durante-una-reunion.jpg";
-import productImage from "assets/img/enhanced_image_1-removebg-preview.png";
+import logoImage from "./assets/img/LogoMagicians.png";
+import teamImage from "./assets/img/equipo-de-empresarios-durante-una-reunion.jpg";
+import productImage from "./assets/img/enhanced_image_1-removebg-preview.png";
 
 const MagicianGround: React.FC = () => {
   const [menuVisible, setMenuVisible] = useState(false);
