@@ -1,4 +1,4 @@
-/* Reset */
+/* RESET */
 * {
   margin: 0;
   padding: 0;
@@ -31,6 +31,7 @@ header {
   font-weight: bold;
   font-size: 2rem;
 }
+
 .logo img {
   width: 20%;
   margin-right: 10px;
@@ -38,12 +39,15 @@ header {
 
 /* BOTÓN HAMBURGUESA */
 .menu-btn {
-  background-color: rgba(0,0,0,0.0);
+  background-color: transparent;
   border: none;
   padding: 10px;
   border-radius: 5px;
   cursor: pointer;
+  position: relative;
+  z-index: 900;
 }
+
 .menu-btn div {
   width: 25px;
   height: 3px;
@@ -51,24 +55,21 @@ header {
   margin: 5px 0;
   border-radius: 2px;
 }
-.menu-btn {
-  position: relative;
-  z-index: 900; /* menor que el sidebar */
-}
+
 .sidebar {
-  z-index: 1000; /* siempre encima */
+  z-index: 1000;
 }
 
 /* SIDEBAR */
 .sidebar {
   position: fixed;
   top: 0;
-  background-color: #fbfbfb;
   right: -300px;
   width: 280px;
   height: 100%;
   padding: 40px 20px;
-  box-shadow: -2px 0 10px rgba(0,0,0,0.5);
+  background-color: #fbfbfb;
+  box-shadow: -2px 0 10px rgba(0, 0, 0, 0.5);
   transition: 0.3s;
   border-radius: 20px 0 0 20px;
 }
@@ -81,7 +82,7 @@ header {
   position: absolute;
   top: 20px;
   right: 20px;
-  background: rgba(0,0,0,0.0);
+  background: transparent;
   color: #121212;
   border: none;
   font-size: 2rem;
@@ -120,10 +121,11 @@ header {
   color: #2d7035;
 }
 
+/* HERO */
 .hero {
   width: 100%;
-  height: 100vh; 
-  background-image: url('/img/tractor-trabajando-en-un-campo-verde.webp');
+  height: 100vh;
+  background-image: url("./assets/img/tractor-trabajando-en-un-campo-verde.webp");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -132,9 +134,8 @@ header {
 
 .hero-texto {
   position: absolute;
-  bottom: 3rem;    
+  bottom: 3rem;
   left: 1.7rem;
-  top: auto;  
   color: white;
   font-family: 'Georgia', serif;
   z-index: 10;
@@ -143,13 +144,14 @@ header {
 .hero-texto h1 {
   font-size: 3rem;
   font-weight: 600;
-  margin: 0;
 }
 
 .hero-texto p {
   font-size: 1.5rem;
   margin-top: 0.5rem;
 }
+
+/* QUIENES SOMOS */
 .quienes-somos {
   display: flex;
   justify-content: space-between;
@@ -161,11 +163,16 @@ header {
   width: 100%;
   height: 30rem;
   margin: 0 auto;
-  box-shadow: 0 0 20px rgba(0,0,0,0.1);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
 }
 
 .contenido-derecha {
   flex: 1;
+  max-width: 600px;
+}
+
+.contenido-izquierda {
+  flex: 2;
   max-width: 600px;
 }
 
@@ -174,6 +181,11 @@ header {
   margin-bottom: 2rem;
   font-weight: bold;
   color: #648D3A;
+}
+
+.contenido-izquierda p {
+  font-size: 2rem;
+  line-height: 1.6;
 }
 
 .contenido-derecha a {
@@ -192,23 +204,14 @@ header {
   transition: transform 0.3s ease;
 }
 
-.contenido-derecha a:hover span {
+.contenido-derecha a:hover i {
   transform: translateX(4px);
 }
 
-.contenido-izquierda {
-  flex: 2;
-  max-width: 600px;
-}
-
-.contenido-izquierda p {
-  font-size: 2rem;
-  line-height: 1.6;
-}
-
+/* OBJETIVO */
 .objetivo {
   position: relative;
-  background-image: url("/img/ObjetivosSeccion.webp");
+  background-image: url("./assets/img/ObjetivosSeccion.webp");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -243,8 +246,7 @@ header {
 .objetivo-texto p {
   font-size: 1.6rem;
   line-height: 1.6;
-  margin-bottom: 1.5rem;
-  margin-top: 1rem;
+  margin: 1rem 0 1.5rem;
 }
 
 .objetivo-texto a {
@@ -258,23 +260,18 @@ header {
   transition: all 0.3s ease;
 }
 
-.objetivo-texto a i {
-  margin-left: 6px;
-  transition: transform 0.3s ease;
-}
-
-.objetivo-texto a:hover span {
+.objetivo-texto a:hover i {
   transform: translateX(4px);
 }
 
+/* TRABAJO */
 .trabajo {
   display: flex;
-  flex-wrap: wrap;       /* permite que se apile en mobile */
+  flex-wrap: wrap;
   width: 100%;
   min-height: 100vh;
 }
 
-/* Columna izquierda (texto) */
 .trabajo-texto {
   flex: 1;
   background-color: #648D3A;
@@ -308,15 +305,10 @@ header {
   transition: all 0.3s ease;
 }
 
-.trabajo-texto a i {
-  margin-left: 6px;
-  transition: transform 0.3s ease;
-}
 .trabajo-texto a:hover i {
   transform: translateX(4px);
 }
 
-/* Columna derecha (imagen) */
 .trabajo-imagen {
   flex: 1;
 }
@@ -324,124 +316,38 @@ header {
 .trabajo-imagen img {
   width: 100%;
   height: 100%;
-  margin: 0;
   object-fit: cover;
 }
 
-.quienes-somos a:hover i {
-  transform: translateX(4px);
-}
-.objetivo-texto a:hover i {
-  transform: translateX(4px);
-}
-
-.productos {
-  text-align: center;
-  padding: 2rem 1rem;
-  background: #f8f8f8;
-}
-
-.productos h2 {
-  font-size: 1.8rem;
-  margin-bottom: 0.5rem;
-}
-
-.productos hr {
-  width: 80%;
-  margin: 0 auto 1.5rem auto;
-  border: 1px solid #ddd;
-}
-
-.carousel {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 1rem;
-  position: relative;
-}
-
-.carousel button {
-  background: none;
-  border: none;
-  font-size: 2rem;
-  cursor: pointer;
-  color: #333;
-}
-
-.carousel-items {
-  display: flex;
-  overflow: hidden;
-  width: 80%;
-  justify-content: center;
-}
-
-.item {
-  min-width: 250px;
-  padding: 1rem;
-  background: #d4e3d4;
-  border-radius: 12px;
-  text-align: center;
-  margin: 0 0.5rem;
-  flex-shrink: 0;
-  transition: transform 0.3s ease;
-}
-
-.item i {
-  font-size: 3rem;
-  margin-bottom: 0.5rem;
-}
-
-.item .rating {
-  color: orange;
-  font-size: 1.2rem;
-}
-
-.item.active {
-  transform: scale(1.2);
-  background: #a9cfa9;
-}
-
-.categoria {
-  font-size: 0.9rem;
-  color: green;
-}
-
-.descripcion {
-  margin-top: 1.5rem;
-  font-size: 1rem;
-  color: #444;
-}
-
+/* ESTACA */
 .estaca {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  padding: 5rem 2rem;
-  background-image: url(/img/Frame\ 1.svg);
+  background-color: #ffffff;
+  background-image: url("./assets/img/Frame-2.svg");
+  background-repeat: no-repeat;
+  background-position: bottom;
+  background-size: cover;
   font-family: 'Georgia', serif;
   gap: 4rem;
   width: 100%;
-  margin: 0; 
-  box-shadow: 0 0 20px rgba(0,0,0,0.1);
+  margin: 0;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
   text-align: center;
   padding: 4rem 1rem 8rem 1rem;
-  background-color: #ffffff;
-  background-image: url("/img/Frame\ 2.svg"); 
-  background-repeat: no-repeat;
-  background-position: bottom;
-  background-size: cover; 
 }
-.estaca h3{
-  margin: 0rem 0rem 0rem 3rem;
+
+.estaca h3 {
+  margin: 0 0 0 3rem;
   text-align: center;
-  font-size: 2.5rem
+  font-size: 2.5rem;
 }
 
 .estaca-izquierda {
   flex: 1;
   max-width: 500px;
   text-align: center;
-  
 }
 
 .estaca-izquierda h3 {
@@ -450,23 +356,15 @@ header {
   font-weight: bold;
 }
 
+.estaca-izquierda img {
+  height: 30rem;
+}
+
 .estaca-izquierda a {
-  
   color: black;
   text-decoration: none;
   font-size: 0.95rem;
   transition: all 0.3s ease;
-}
-
-.estaca-izquierda img {
-  height: 30rem;
-
-}
-
-
-.estaca-izquierda a span {
-  float: right;
-  transition: transform 0.3s ease;
 }
 
 .estaca-izquierda a:hover span {
@@ -488,6 +386,7 @@ header {
   line-height: 1.6;
 }
 
+/* FOOTER */
 .footer {
   position: relative;
   background-color: #648D3A;
@@ -497,7 +396,6 @@ header {
   overflow: hidden;
 }
 
-/* Nubes */
 .footer::before,
 .footer::after {
   content: "";
@@ -513,7 +411,7 @@ header {
   left: -60px;
   width: 220px;
   height: 160px;
-  background-image: url("/img/nube1.png");
+  background-image: url("./assets/img/nube1.png");
 }
 
 .footer::after {
@@ -521,10 +419,10 @@ header {
   right: -70px;
   width: 250px;
   height: 180px;
-  background-image: url("/img/nube2.png");
+  background-image: url("./assets/img/nube2.png");
 }
 
-/* Contenedor */
+/* CONTENEDOR FOOTER */
 .footer-contenedor {
   position: relative;
   z-index: 1;
@@ -532,12 +430,12 @@ header {
   margin: 0 auto;
 }
 
-/* --- Formulario --- */
+/* FORMULARIO */
 .footer-form {
   background: #fff;
   padding: 3rem;
   border-radius: 19px;
-  box-shadow: 0px 6px 12px rgba(0,0,0,0.5);
+  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.5);
   max-width: 450px;
   margin: 0 auto 3rem;
 }
@@ -579,7 +477,6 @@ header {
   background: #4e6d2d;
 }
 
-/* --- Parte inferior --- */
 .footer-bottom {
   margin-top: 2rem;
 }
@@ -607,7 +504,7 @@ header {
 .footer-divider {
   width: 60px;
   height: 2px;
-  background: rgba(255,255,255,0.7);
+  background: rgba(255, 255, 255, 0.7);
 }
 
 .footer-redes {
@@ -631,50 +528,32 @@ header {
   opacity: 0.9;
 }
 
-
-
-
+/* MEDIA QUERIES */
 @media (max-width: 768px) {
   .logo img {
-        width: 35%;
-        margin-right: 10px;
-    }
+    width: 35%;
+    margin-right: 10px;
+  }
+
   .quienes-somos {
-    align-items: center;
     flex-direction: column;
     text-align: center;
     padding: 3rem 1.5rem;
     font-size: 2rem;
-    
   }
 
-  .contenido-izquierda h3{
+  .contenido-izquierda h3 {
     font-size: 1.8rem;
   }
 
-  .contenido-derecha a{
+  .contenido-derecha a {
     font-size: 1rem;
   }
 
-  .contenido-izquierda, .contenido-derecha {
-    max-width: 100%;
-    font-size: 0.95rem;
-  }
-  .contenido-izquierda p{
+  .contenido-izquierda p {
     font-size: 1.5rem;
-  
   }
 
-  .contenido-derecha p{
-    font-size: 1.4rem;
-  }
-
-  .contenido-derecha a i {
-    float: none;
-    display: inline-block;
-    margin-left: 0;
-    font-size: 1rem;
-  }
   .objetivo {
     padding: 2rem;
     justify-content: center;
@@ -688,61 +567,48 @@ header {
     font-size: 1.8rem;
   }
 
-  .objetivo-texto p {
-    font-size: 0.95rem;
-  }
-
+  .objetivo-texto p,
   .objetivo-texto a {
     font-size: 0.95rem;
   }
-   .trabajo {
+
+  .trabajo {
     flex-direction: column;
     height: auto;
-    background-image: url("/img/equipo-de-empresarios-durante-una-reunion.jpg");
+    background-image: url("./assets/img/equipo-de-empresarios-durante-una-reunion.jpg");
     background-repeat: no-repeat;
     background-size: cover;
   }
+
   .trabajo-texto {
     padding: 2rem;
     text-align: center;
-    background-color: rgba(0,0,0,0.4);
+    background-color: rgba(0, 0, 0, 0.4);
   }
+
   .trabajo-texto h2 {
     font-size: 1.8rem;
   }
-  .trabajo-texto p {
-    font-size: 1rem;
-  }
+
+  .trabajo-texto p,
   .trabajo-texto a {
     font-size: 1rem;
   }
+
   .trabajo-imagen {
     display: none;
-    order: -1; /* imagen arriba en móvil */
-    height: 300px;
   }
+
   .estaca {
-    align-items: center;
     flex-direction: column;
-    margin: auto;
-    display: flex;
-    text-align: center;
+    align-items: center;
     padding: 3rem 1.5rem;
   }
 
-  .estaca-izquierda, .estaca-derecha {
-    max-width: 100%;
-  }
-
   .estaca-derecha {
-    top: 0px; 
+    top: 0;
   }
 
-  .estaca-izquierda a span {
-    float: none;
-    display: inline-block;
-    margin-left: 4px;
-  }
   .footer-info {
     flex-direction: row;
     justify-content: center;
@@ -752,5 +618,4 @@ header {
     height: 40px;
     width: 2px;
   }
-        
 }
